@@ -1,0 +1,18 @@
+<?php
+
+    // variable definition
+
+    // condition
+
+    // for loop
+    for ($i = 0; $i < 10; $i++) {
+        echo "<h".$i.">Hello world</h".$i.">";
+
+    } 
+
+    // while loop
+
+
+?>
+
+<h5>this is outside</h5>
