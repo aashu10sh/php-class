@@ -20,4 +20,3 @@
 
     mysqli_close($conn);
 
-?>

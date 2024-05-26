@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($res) {
         header("Location: /edit-data.php");
         die();
-        echo "DATA inserted!";
     } else {
         echo "Couldn't insert data <br/>";
         echo mysqli_error($conn);
