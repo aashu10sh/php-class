@@ -1,10 +1,6 @@
 <?php
-
-
     require_once "./conn.php";
-
     $id = $_GET["id"];
-
 
     $userVerifyQuery = "SELECT * FROM users WHERE id='$id';";
 
@@ -15,7 +11,6 @@
         die();
     }
 
-
     $data = mysqli_fetch_assoc($response);
 
     if(!$data){
@@ -23,7 +18,7 @@
         die();
     }
 
-    $query = "DELETE FROM users WHERE id='$id'";
+    $query = "DELETE FROM users WHERE id='$id';";
 
     $res = mysqli_query($conn, $query);
 
@@ -36,4 +31,3 @@
         echo "Couldn't insert data <br/>";
         echo mysqli_error($conn);
     }
-?>
