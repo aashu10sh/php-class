@@ -58,12 +58,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET'){
         </tr>
     <?php
     while($row = mysqli_fetch_assoc($results)){
+        $id = $row["id"];
+        $name = $row["name"];
+        $created = $row['created'];
+        $completed = $row['completed'] == '1' ? "checked" :"";
+
         echo "<tr>";
-        echo "<td>".$row['name'] . "</td>";
-        echo "<td>"."<input type='checkbox' disabled value=".$row['completed'] . "></td>";
-        echo "<td>". $row["created"] . "</td>";
-        echo "<td> <a href=/edit.php?id=".$row["id"]."> Edit </a> </td>";
-        echo "<td> <a href=/delete.php?id=".$row["id"]."> Delete </a> </td>";
+        echo "<td>".$name. "</td>";
+        echo "<td>"."<input type='checkbox' disabled ". $completed ."></td>";
+        echo "<td>". $created . "</td>";
+        echo "<td> <a href=/todo/edit.php?id=".$id."> Edit </a> </td>";
+        echo "<td> <a href=/todo/delete.php?id=".$id."> Delete </a> </td>";
         // echo "<div> === </div>";
         echo "</tr>";
     }
