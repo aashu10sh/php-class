@@ -1,6 +1,4 @@
 <?php
-
-
 session_start();
 
 if(!isset($_SESSION['user'])){
@@ -8,17 +6,12 @@ if(!isset($_SESSION['user'])){
     die();
 }
 require_once("../conn.php");
-
 $userEmail = $_SESSION["user"];
-
 $sql = "SELECT * FROM auth WHERE email='$userEmail';";
-
 $result = mysqli_query($conn,$sql);
-
 $data = mysqli_fetch_assoc($result);
 
 ?>
-
 
 
 <!DOCTYPE html>
